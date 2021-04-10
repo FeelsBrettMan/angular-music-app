@@ -6,13 +6,17 @@ import { FooterComponent } from './footer/footer.component';
 import { LibraryComponent } from './library/library.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     LibraryComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    CreditsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
+<span>Click on a song to play!</span>
 <div id="libMain">
-  <p (click)="setSong(0)">Metalmania by Kevin Macleod</p>
+<!--  <p (click)="setSong(0)">Metalmania by Kevin Macleod</p>
   <p (click)="setSong(1)">Noise Attack by Kevin Macleod</p>
   <p (click)="setSong(2)">Raw by Kevin Macleod</p>
   <p (click)="setSong(3)">Take the Lead by Kevin Macleod</p>
@@ -7,5 +8,11 @@
   <p (click)="setSong(5)">Twisted by Kevin Macleod</p>
   <p (click)="setSong(6)">Volatile by Kevin Macleod</p>
   <p (click)="setSong(7)">What You Want (version 2) by Kevin Macleod</p>
+  <p (click)="setSong(8)">A Robust Crew by Darren Curtis</p>-->
+
+  <div *ngFor="let item of songNames; index as i;">
+    <p (click)="setSong(i)">{{item}}</p>
+
+  </div>
 </div>
 

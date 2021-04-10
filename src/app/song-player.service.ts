@@ -11,6 +11,7 @@ export class SongPlayerService {
   currentSongName: string = '';
 
   songData:Subject<string> = new Subject<string>();
+  songPlaying: Subject<string> = new Subject<string>();
   songNames: string[] = [
     "Metalmania by Kevin Macleod",
     "Noise Attack by Kevin Macleod",
@@ -19,7 +20,8 @@ export class SongPlayerService {
     "The Whip (Extended Version) by Kevin Macleod",
     "Twisted by Kevin Macleod",
     "Volatile by Kevin Macleod",
-    "What You Want (version 2) by Kevin Macleod"]
+    "What You Want (version 2) by Kevin Macleod",
+    "A Robust Crew by Darren Curtis"]
   songs: string[] = [
     '/assets/music/metalmania-by-kevin-macleod-from-filmmusic-io.mp3',
     '/assets/music/noise-attack-by-kevin-macleod-from-filmmusic-io.mp3',
@@ -28,7 +30,9 @@ export class SongPlayerService {
     '/assets/music/the-whip-extended-version-by-kevin-macleod-from-filmmusic-io.mp3',
     '/assets/music/twisted-by-kevin-macleod-from-filmmusic-io.mp3',
     '/assets/music/volatile-reaction-by-kevin-macleod-from-filmmusic-io.mp3',
-    '/assets/music/what-you-want-version-2-by-kevin-macleod-from-filmmusic-io.mp3'];
+    '/assets/music/what-you-want-version-2-by-kevin-macleod-from-filmmusic-io.mp3',
+    '/assets/music/A Robust Crew MP3.mp3'];
+
 
   //
   // methods
@@ -42,11 +46,18 @@ export class SongPlayerService {
       html5: true,
       autoplay: true
     });
+    this.songPlaying.next("pause")
   }
 
   togglePlay = () => {
-    if (this.currentSongHowl.playing()) { this.currentSongHowl.pause(); }
-    else { this.currentSongHowl.play(); }
+    if (this.currentSongHowl.playing()) {
+      this.currentSongHowl.pause();
+      this.songPlaying.next("play")
+    }
+    else {
+      this.currentSongHowl.play();
+      this.songPlaying.next("pause");
+    }
   }
 
 

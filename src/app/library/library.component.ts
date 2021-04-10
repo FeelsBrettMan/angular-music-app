@@ -10,8 +10,11 @@ export class LibraryComponent implements OnInit {
 
   //
   // instance data
+  songNames: string[] = [];
 
-  constructor(private songPlayer: SongPlayerService) { }
+  constructor(private songPlayer: SongPlayerService) {
+    this.songNames = songPlayer.songNames
+  }
 
   ngOnInit(): void {
   }

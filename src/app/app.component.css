@@ -1,8 +1,15 @@
+app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+  background-color: lightgray;
+}
 #contentMain{
-  padding: 0 0 0 1%
+  margin-top: 10vh;
+  padding: 0 0 0 1%;
 }
-a{
-  margin: 1vw;
-}
+
+
 
 
