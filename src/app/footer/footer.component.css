@@ -1,0 +1,11 @@
+#footMain {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3vh;
+  background-color: lightpink;
+  text-align: center;
+}
+.footerStuff{
+  margin: auto auto auto 10px;
+}
